@@ -3,29 +3,26 @@
 
 # Datamation pacakge
 
-> The Datamations package accompanies the paper _Datamations: Animated Explanations of Data Analysis Pipelines_, presented at C+J 2021  and will appear at ACM CHI 2021. The paper is available at [link](http://jakehofman.com/pdfs/datamations.pdf), and the preregistration, data, and materials are at [OSF](https://osf.io/85njc/).
-
 ## Installation
 
-First, download the zip file of the package source called
-`dmpkg_0.0.0.9007.tar.gz` from [this
-link](https://zenodo.org/record/4290966), since the anonymous GitHub
-repo doesn’t allow for downloading. With the zip file you downloaded,
-run the code below (`README.Rmd`) to reproduce the datamation gifs.
-(`eval=FALSE` in chunk options might prevent you from automatically
-running the chuncks. Remove if necessary.)
+datamation is not yet available on CRAN, but you can install it from
+GitHub with
 
 ``` r
-install.packages(file.choose(), repos = NULL, type = "source")
+remotes::install_github("seankross/datamations")
 ```
+
+## Examples for Plot-based Datamations
+
+With the zip file you downloaded, run the code below (`README.Rmd`) to
+reproduce the datamation gifs. (`eval=FALSE` in chunk options might
+prevent you from automatically running the chunks. Remove if necessary.)
 
 ``` r
 library(dmpkg)
 library(animation)
 library(tidyverse)
 ```
-
-## Examples for Plot-based Datamations
 
 ``` r
 degree_title_step1 <- "Step 1: Each dot shows one person\n            and each group shows degree type"
