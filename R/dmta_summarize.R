@@ -1,12 +1,12 @@
 #' @importFrom dplyr is_grouped_df mutate n left_join bind_rows select filter group_vars pull group_by summarize group_split arrange ungroup
-#' @importFrom purrr map2_dfr pmap_dfr pmap_dbl map2_dbl map2_chr flatten map2 map_dfr
+#' @importFrom purrr map2_dfr pmap_dfr pmap_dbl map2_dbl map2_chr map2 map_dfr
 #' @importFrom ggplot2 ggplot aes geom_point scale_color_manual ggtitle
 #' @importFrom gganimate transition_states ease_aes view_follow anim_save
 #' @importFrom dplyr any_of arrange bind_rows filter group_by group_size group_split group_vars is_grouped_df left_join mutate n n_groups pull select summarize ungroup group_indices
 #' @importFrom gganimate anim_save ease_aes transition_states view_follow
 #' @importFrom ggplot2 aes element_blank geom_point ggplot ggtitle scale_color_manual theme
 #' @importFrom magick image_read image_write
-#' @importFrom purrr accumulate flatten map map2 map2_dbl map2_dfr map_chr map_dbl map_dfr map_if pmap_dbl pmap_dfr reduce
+#' @importFrom purrr accumulate map map2 map2_dbl map2_dfr map_chr map_dbl map_dfr map_if pmap_dbl pmap_dfr reduce
 #' @importFrom rlang parse_expr
 #' @importFrom stats median
 #' @importFrom tibble as_tibble tibble
@@ -89,7 +89,7 @@ dmta_summarize <- function(state1, state2, dimensions,
 
     movements <- movements %>%
       map(~ .x %>% group_by(When) %>% group_split()) %>%
-      flatten()
+      purrr::flatten()
 
     move_matrix <- matrix(1:length(movements), ncol = sqrt(length(movements)), byrow = TRUE)
     move_matrix[lower.tri(move_matrix)] <- 0
@@ -210,7 +210,7 @@ dmta_summarize <- function(state1, state2, dimensions,
 
     movements <- movements %>%
       map(~ .x %>% group_by(When) %>% group_split()) %>%
-      flatten()
+      purrr::flatten()
 
     move_matrix <- matrix(1:length(movements), ncol = sqrt(length(movements)), byrow = TRUE)
     move_matrix[lower.tri(move_matrix)] <- 0
