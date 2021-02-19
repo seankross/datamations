@@ -7,7 +7,6 @@
 #' @importFrom purrr map_chr map_df
 #' @import dplyr
 #' @import tidyr
-#' @import purrr
 #' @import tweenr
 #' @import rlang
 #' @export
