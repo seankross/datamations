@@ -1,5 +1,7 @@
 **This repository is deprecated and no longer maintained.**
 
+Datamations is a framework for the automatic generation of explanation of the steps of an analysis pipeline. It automatically turns code into animations, showing the state of the data at each step of an analysis.
+
 If you'd like to try Datamations yourself or are looking for the latest code, you can find it here: https://github.com/microsoft/datamations
 
 If you're looking for materials to reproduce the results in the related paper 
